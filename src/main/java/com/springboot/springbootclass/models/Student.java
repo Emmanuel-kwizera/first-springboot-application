@@ -15,22 +15,25 @@ public class Student {
     private String names;
 
     @NotNull
-    private String schoolName;
+    private String email;
 
-    @OneToOne
-    private Marks marks;
+    @NotNull
+    private String gender;
 
-    public Student() { }
-
-    public Student(String names, String schoolName) {
-        this.names = names;
-        this.schoolName = schoolName;
-    }
+    @NotNull
+    private int age;
 
     public long getId() {
         return id;
     }
+    public Student() { }
 
+    public Student(String names, String email, String gender, int age) {
+        this.names = names;
+        this.email = email;
+        this.gender = gender;
+        this.age = age;
+    }
     public void setId(long id) {
         this.id = id;
     }
@@ -43,11 +46,27 @@ public class Student {
         this.names = names;
     }
 
-    public String getSchoolName() {
-        return schoolName;
+    public String getEmail() {
+        return email;
     }
 
-    public void setSchoolName(String schoolName) {
-        this.schoolName = schoolName;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }

@@ -1,25 +1,14 @@
-package com.springboot.springbootclass.models;
+package com.springboot.springbootclass.dto;
 
+import com.springboot.springbootclass.models.Course;
+import com.springboot.springbootclass.models.Student;
 import com.sun.istack.NotNull;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-
-@Entity
-public class Marks {
-
-    @Id
-    @GeneratedValue
-    private int id;
-
+public class CreateMarkDTO {
     @NotNull
-    @ManyToOne
     private Student student;
 
     @NotNull
-    @ManyToOne
     private Course course;
 
     @NotNull
@@ -28,21 +17,13 @@ public class Marks {
     @NotNull
     private int maximum;
 
-    public Marks(){}
+    public CreateMarkDTO(){ }
 
-    public Marks(@NotNull Course course, @NotNull float score,@NotNull Student student,@NotNull int maximum) {
+    public CreateMarkDTO(@NotNull Course course, @NotNull float score,@NotNull Student student,@NotNull int maximum) {
         this.course = course;
         this.score = score;
         this.student = student;
         this.maximum = maximum;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public Student getStudent() {
